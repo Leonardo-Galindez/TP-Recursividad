@@ -9,7 +9,19 @@ package Ejercicios;
  * @author galin
  */
 public class Ejercicio3 {
+
     public static void main(String[] args) {
-        System.out.println("");
+
     }
+
+    public static int algo(int n) { //precondicion: n es un entero positivo
+        int aux;
+        if (n == 1) {
+            aux = 1;
+        } else {
+            aux = algo(n - 1) + 1;
+        }
+        return aux;
+    }
+
 }
