@@ -27,7 +27,7 @@ public class Ejercicio6 {
                 mayor = Array[i];
                 posMayor = i;
             }
-            posMayor=NumeroMayor(Array,i+1,mayor,posMayor);
+            posMayor=NumeroMayor(Array,i+1,mayor,posMayor);//i+1
         }
         return posMayor;
     }

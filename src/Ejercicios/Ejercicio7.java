@@ -23,7 +23,7 @@ public class Ejercicio7 {
         
         if(fila<Matriz.length){
             if(colum<Matriz[0].length){
-                suma=Matriz[fila][colum]+SumaFilas(fila,colum,Matriz);
+                suma=Matriz[fila][colum]+SumaFilas(fila,colum+1,Matriz);
             }
             
         }
