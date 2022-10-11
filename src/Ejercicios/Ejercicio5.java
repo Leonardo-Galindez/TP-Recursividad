@@ -28,8 +28,6 @@ public class Ejercicio5 {
         if (num != 0) {
             if (num % 3 == 0) {
                 cont = 1 + ContarMult3();
-            } else {
-                cont = 0 + ContarMult3();
             }
 
         }
