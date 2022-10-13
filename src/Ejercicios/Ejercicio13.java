@@ -13,5 +13,9 @@ public class Ejercicio13 {
         
     }
     
+    public static void MayorNumero(){
+        
+    }
+    
     
 }
