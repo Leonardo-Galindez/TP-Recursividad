@@ -20,47 +20,49 @@ public class Ejercicio7 {
             {7, 8, 9}
         };
         System.out.println("");
-        System.out.println(SumaFila(fila, colum, Numeros));
+        System.out.println(SumaMatriz(fila, colum, Numeros));
     }
 
-    //Algoritmo iterativo
-    public static int Suma(int[][] Matriz) {
+    public static int SumaFila(int c,int [] Array){
         int suma;
-        suma = 0;
-        for (int i = 0; i < Matriz.length; i++) {
-            for (int j = 0; j < Matriz.length; j++) {
-                suma = suma + Matriz[i][j];
-            }
+        suma=0;
+        if(c<Array.length){
+            System.out.println(Array[c]);
+            suma=SumaFila(c+1,Array);
+            //suma=Array[c]+SumaFila(c+1,Array);
         }
         return suma;
     }
 //otro modulo suma de columas
     //Algoritmo recursivo
-    public static int SumaFila(int fila, int colum, int[][] Matriz) {
-        int suma = 0;
+    public static int SumaMatriz(int fila, int colum, int[][] Matriz) {
+        int sumaM = 0,sumaF=0;
+        int []Fila= new int [Matriz[0].length];
         //System.out.print(Matriz[fila][colum] + " ");
         
         if (fila != Matriz.length - 1 || colum != Matriz[0].length - 1) {
             //2
             if (colum <= Matriz[0].length - 1) {
                 System.out.print(Matriz[fila][colum]+" ");
-                suma = Matriz[fila][colum] + SumaFila(fila, colum + 1, Matriz);
+                Fila[colum]=Matriz[fila][colum];
+                sumaM = Matriz[fila][colum] + SumaMatriz(fila, colum + 1, Matriz);
 
             } else {
+                System.out.println(SumaFila(colum-1,Fila));
                 System.out.println("");
                 colum = 0;
                 fila++;
-                suma = SumaFila(fila, colum, Matriz);
+                sumaM = SumaMatriz(fila, colum, Matriz);
 
             }
 
         } else {
             System.out.print(Matriz[fila][colum]+" ");
-            suma = Matriz[fila][colum];//caso base
+            sumaM = Matriz[fila][colum];//caso base
             System.out.println("");
         }
 
-        return suma;
+        return sumaM;
 
     }
 
