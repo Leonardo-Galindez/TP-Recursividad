@@ -14,49 +14,58 @@ public class Ejercicio19 {
 
     public static void main(String[] args) {
 
-        int i, j, altura;
-        int aux;
+        int medio, altura,i;
+        int espacios;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese altura de la piramide");
         altura = sc.nextInt();
-        aux = altura;
+        espacios = altura;
+        medio = 1;
         i=1;
-    
-        MediaPiramide(altura, i);
-        //PiramideInvert(i,j,renglones,aux);
-   
-}
+        MediaPiramide(altura, medio);
+        System.out.println("");
+        Piramide(altura, medio, espacios,i);
 
-public static void Piramide(int altura, int j, int i,int aux) {
+    }
 
+    public static void Piramide(int altura, int medio, int espacios,int i) {
         
-        
-        
-        if(i<=altura){
-            if(j<aux){
-                System.out.print(" ");
-                Piramide(altura,j+1,i,aux);
+        if (altura >= medio) {
+            if(i<espacios){
+                System.out.print("*");
+                Piramide(altura,medio,espacios,i+1);
             }else{
-                System.out.println(i);
-                Piramide(altura,1,i+1,aux-1);
+                System.out.println(medio);
+                Piramide(altura,medio+1,espacios-1,1);
             }
+        }else{
+            System.out.println(medio);
         }
-        /*if (i<altura) {
-            if (i <= j) {
-                System.out.print(i);
-                Piramide(altura, j, i + 1);
-            } else {
-                System.out.println("");
-                Piramide(altura,j+1,1);
 
+        /*if (i <= altura) {
+            if (j < aux) {//mouestra espacios hac
+                System.out.print(" ");
+                Piramide(altura, j + 1, i, aux);
+            } else {
+                System.out.println(i);  
+                Piramide(altura, 1, i + 1, aux - 1);
+               // MostrarPiramide(1,1);
+                
             }
         }*/
     }
 
+    public static void MostrarPiramide(int i, int j) {
+        if (i <= j) {
+            System.out.print(i);
+            MostrarPiramide(i, j);
+        }
+    }
+
     public static void MediaPiramide(int renglones, int i) {
 
-        if (i <= renglones) {
+        if (i < renglones) {
 
             MostrarPiramide(i);
 
@@ -64,6 +73,7 @@ public static void Piramide(int altura, int j, int i,int aux) {
             MediaPiramide(renglones, i + 1);
         }
     }
+
     public static void MostrarPiramide(int i) {
 
         if (i > 0) {
@@ -71,10 +81,8 @@ public static void Piramide(int altura, int j, int i,int aux) {
             MostrarPiramide(i - 1);
         }
     }
-    
-    
 
-    public static void PiramideInvert(int i, int j, int renglones, int aux) {
+    /*public static void PiramideInvert(int i, int j, int renglones, int aux) {
 
         if (i < renglones) {
             if (j < aux) {
@@ -90,14 +98,12 @@ public static void Piramide(int altura, int j, int i,int aux) {
         }
 
     }
-    
+
     public static void MostrarPiramide(int i, int renglones) {
 
         if (i < renglones) {
             System.out.print(i);
             MostrarPiramide(i + 1, renglones);
         }
-    }
-
-     
+    }*/
 }

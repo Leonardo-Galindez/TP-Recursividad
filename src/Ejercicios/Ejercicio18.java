@@ -19,20 +19,20 @@ public class Ejercicio18 {
         n = sc.nextInt();
         System.out.println("Ingrese numero bomba");
         b = sc.nextInt();
-        Explota(n, b);
+        Divide(n, b);
 
     }
 
-    public static void Explota(int num, int numBomba) {
+    public static void Divide(int num, int numBomba) {
 
-        if (num > numBomba) {
-
-            System.out.println(num);
-
-            Explota(num - (num / numBomba), numBomba);
+        if (num > numBomba) {//condicion de corte
+            Divide(num / numBomba, numBomba);
+            if (num > numBomba) {//llamada despues de finalizar una recursion de pues de mostrar
+                Divide(num - num / numBomba, numBomba);
+            }
         } else {
             System.out.println(num);
         }
-
     }
+
 }
