@@ -11,37 +11,40 @@ package EjerciciosExtra;
 import java.util.Scanner;
 
 public class Piramide4a {
+
     public static void main(String[] args) {
-        int filas,asteriscos,alto,espacio;
+        int filas, asteriscos, alto, espacio;
         char caracter;
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese numero");
-        filas=sc.nextInt();
-        alto=1;
-        espacio=1;
-        asteriscos=1;
-        Piramide(filas,alto,espacio,asteriscos);
+        filas = sc.nextInt();
+        alto = 1;
+        espacio = 1;
+        asteriscos = 1;
+        Piramide(filas, alto, espacio, asteriscos);
+        MediaPiramide(filas, asteriscos);
     }
-    
-    public static void Piramide(int filas, int alto, int espacio,int asteriscos) {
-        
-        if(alto<=filas){
-            if(espacio<=filas){//Imprimir espacios
-                System.out.println(" ");
-                Piramide(filas,alto,espacio+1,asteriscos);
-            }else{
-                Piramide(filas-alto,alto+1,1,asteriscos);
-            }
-            if(asteriscos<=alto*2-1){
-                System.out.println("*");
-                Piramide(filas,alto,espacio,asteriscos+1);
-            }else{
-                System.out.println(" ");
-            }
-            Piramide(filas,alto+1,espacio,asteriscos);
+
+    public static void Piramide(int filas, int alto, int espacio, int asteriscos) {
+
+    }
+
+    //Imprimi Lateral derecho
+    public static void MediaPiramide(int renglones, int i) {
+
+        if (i < renglones) {
+            MostrarPiramide(i);
+            System.out.println("");
+            MediaPiramide(renglones, i + 1);
         }
     }
-    
-    
-    
+
+    public static void MostrarPiramide(int i) {
+
+        if (i > 0) {
+            System.out.print(i);
+            MostrarPiramide(i - 1);
+        }
+    }
+
 }
