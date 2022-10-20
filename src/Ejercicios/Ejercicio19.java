@@ -41,30 +41,32 @@ public class Ejercicio19 {
                 System.out.println("");
                 Piramide(altura, medio + 1, espacios - 1, 1);
 
-            if(i<=espacios){
-                System.out.print("*");
-                Piramide(altura,medio,espacios,i+1);
-            }else{
-                System.out.println("");
-                Piramide(altura,medio+1,espacios-1,1);
+                if (i <= espacios) {
+                    System.out.print("*");
+                    Piramide(altura, medio, espacios, i + 1);
+                } else {
+                    System.out.println("");
+                    Piramide(altura, medio + 1, espacios - 1, 1);
 
+                }
             }
         }
     }
+    
 
-        public static void IzquierdaDerecha(int medio, int i) {
+    public static void IzquierdaDerecha(int medio, int i) {
         if (i < medio) {
             System.out.print("*");
             IzquierdaDerecha(medio, i + 1);
-        }else{
-            DerechaIzquierda(medio,i);
+        } else {
+            DerechaIzquierda(medio, i);
         }
     }
 
     public static void DerechaIzquierda(int medio, int i) {
-        if (medio >0) {
+        if (medio > 0) {
             System.out.print("*");
-            DerechaIzquierda(medio-1,i);
+            DerechaIzquierda(medio - 1, i);
         }
     }
 
