@@ -32,6 +32,7 @@ public class Ejercicio19 {
     public static void Piramide(int altura, int medio, int espacios, int i) {
 
         if (altura >= medio) {
+
             if (i < espacios) {
                 System.out.print(" ");
                 Piramide(altura, medio, espacios, i + 1);
@@ -39,11 +40,19 @@ public class Ejercicio19 {
                 IzquierdaDerecha(medio, 1);
                 System.out.println("");
                 Piramide(altura, medio + 1, espacios - 1, 1);
+
+            if(i<=espacios){
+                System.out.print("*");
+                Piramide(altura,medio,espacios,i+1);
+            }else{
+                System.out.println("");
+                Piramide(altura,medio+1,espacios-1,1);
+
             }
         }
     }
 
-    public static void IzquierdaDerecha(int medio, int i) {
+        public static void IzquierdaDerecha(int medio, int i) {
         if (i < medio) {
             System.out.print("*");
             IzquierdaDerecha(medio, i + 1);
