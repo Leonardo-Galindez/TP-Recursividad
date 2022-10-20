@@ -23,7 +23,7 @@ public class Ejercicio19 {
         espacios = altura;
         medio = 1;
         i = 1;
-        MediaPiramide(altura, medio);
+     
         System.out.println("");
         Piramide(altura, medio, espacios, i);
 
@@ -40,15 +40,6 @@ public class Ejercicio19 {
                 IzquierdaDerecha(medio, 1);
                 System.out.println("");
                 Piramide(altura, medio + 1, espacios - 1, 1);
-
-                if (i <= espacios) {
-                    System.out.print("*");
-                    Piramide(altura, medio, espacios, i + 1);
-                } else {
-                    System.out.println("");
-                    Piramide(altura, medio + 1, espacios - 1, 1);
-
-                }
             }
         }
     }
@@ -56,7 +47,7 @@ public class Ejercicio19 {
 
     public static void IzquierdaDerecha(int medio, int i) {
         if (i < medio) {
-            System.out.print("*");
+            System.out.print(i);
             IzquierdaDerecha(medio, i + 1);
         } else {
             DerechaIzquierda(medio, i);
@@ -65,13 +56,13 @@ public class Ejercicio19 {
 
     public static void DerechaIzquierda(int medio, int i) {
         if (medio > 0) {
-            System.out.print("*");
+            System.out.print(medio);
             DerechaIzquierda(medio - 1, i);
         }
     }
 
     ////////////////
-    public static void MostrarPiramide(int i, int j) {
+    /*public static void MostrarPiramide(int i, int j) {
         if (i <= j) {
             System.out.print(i);
             MostrarPiramide(i, j);
