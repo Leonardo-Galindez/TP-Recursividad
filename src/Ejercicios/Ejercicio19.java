@@ -14,7 +14,7 @@ public class Ejercicio19 {
 
     public static void main(String[] args) {
 
-        int medio, altura,i;
+        int medio, altura, i;
         int espacios;
 
         Scanner sc = new Scanner(System.in);
@@ -22,44 +22,49 @@ public class Ejercicio19 {
         altura = sc.nextInt();
         espacios = altura;
         medio = 1;
-        i=1;
+        i = 1;
         MediaPiramide(altura, medio);
         System.out.println("");
-        Piramide(altura, medio, espacios,i);
+        Piramide(altura, medio, espacios, i);
 
     }
 
-    public static void Piramide(int altura, int medio, int espacios,int i) {
-        
+    public static void Piramide(int altura, int medio, int espacios, int i) {
+
         if (altura >= medio) {
-            if(i<espacios){
-                System.out.print("*");
-                Piramide(altura,medio,espacios,i+1);
-            }else{
-                System.out.println(medio);
-                Piramide(altura,medio+1,espacios-1,1);
-            }
-        }else{
-            System.out.println(medio);
-        }
-
-        /*if (i <= altura) {
-            if (j < aux) {//mouestra espacios hac
+            if (i < espacios) {
                 System.out.print(" ");
-                Piramide(altura, j + 1, i, aux);
+                Piramide(altura, medio, espacios, i + 1);
             } else {
-                System.out.println(i);  
-                Piramide(altura, 1, i + 1, aux - 1);
-               // MostrarPiramide(1,1);
-                
+                IzquierdaDerecha(medio, 1);
+                System.out.println("");
+                Piramide(altura, medio + 1, espacios - 1, 1);
             }
-        }*/
+        }
     }
 
+    public static void IzquierdaDerecha(int medio, int i) {
+        if (i < medio) {
+            System.out.print("*");
+            IzquierdaDerecha(medio, i + 1);
+        }else{
+            DerechaIzquierda(medio,i);
+        }
+    }
+
+    public static void DerechaIzquierda(int medio, int i) {
+        if (medio >0) {
+            System.out.print("*");
+            DerechaIzquierda(medio-1,i);
+        }
+    }
+
+    ////////////////
     public static void MostrarPiramide(int i, int j) {
         if (i <= j) {
             System.out.print(i);
             MostrarPiramide(i, j);
+
         }
     }
 
