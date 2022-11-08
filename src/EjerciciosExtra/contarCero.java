@@ -11,9 +11,16 @@ package EjerciciosExtra;
 public class contarCero {
     public static void main(String[] args) {
         int array[]={1,0,3,0};
-        System.out.println(contarCero(array,0));
+        System.out.println(pot(2,3));
     }
-    
+    public static int pot(int x,int y){
+        int res;
+        if(y==1){
+            res=x;
+        }else{
+            res=x*pot(x,y-1);
+        }return res;
+    }
     public static int contarCero(int array[],int pos){
         int contCero=0;
         if(pos<array.length){
