@@ -50,14 +50,14 @@ public class Ejercicio19 {
             System.out.print(i);
             IzquierdaDerecha(medio, i + 1);
         } else {
-            DerechaIzquierda(medio, i);
+            DerechaIzquierda(medio);
         }
     }
 
-    public static void DerechaIzquierda(int medio, int i) {
+    public static void DerechaIzquierda(int medio) {
         if (medio > 0) {
             System.out.print(medio);
-            DerechaIzquierda(medio - 1, i);
+            DerechaIzquierda(medio - 1);
         }
     }
 
