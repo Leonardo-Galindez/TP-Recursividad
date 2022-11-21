@@ -35,7 +35,7 @@ public class Piramide {
     
     public static void LadoIzquierdo(int fila,int i){
         if(fila>i){
-            System.out.print("*");
+            System.out.print(i);
             LadoIzquierdo(fila,i+1);
         }else{
             LadoDerecho(fila);
@@ -44,7 +44,7 @@ public class Piramide {
     
     public static void LadoDerecho(int fila){
         if(fila>0){
-            System.out.print("*");
+            System.out.print(fila);
             LadoDerecho(fila-1);
         }
     }

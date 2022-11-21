@@ -1,0 +1,2 @@
+--ejercicio 3 consulta sobre muchos if
+--ejercicio 1 sobre caso corte 

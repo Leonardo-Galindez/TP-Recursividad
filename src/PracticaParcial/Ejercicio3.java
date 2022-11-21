@@ -23,8 +23,8 @@ public class Ejercicio3 {
     //consulta sobre si la variable boolean la meto por parametros o no ????????
     public static boolean matrizIndentidad(int Matriz[][], int fila, int colum) {
         boolean identidad = true;
-        if (fila != Matriz.length - 1 || colum != Matriz.length - 1) {
-            if (colum < Matriz[0].length) {
+        if (fila != Matriz.length - 1 || colum != Matriz.length - 1) {//---------------------
+            if (colum < Matriz[0].length) {//-------------------------------------
                 if (fila == colum) {
                     if (Matriz[fila][colum] != 1) {
                         identidad = false;
@@ -38,7 +38,7 @@ public class Ejercicio3 {
                         identidad = matrizIndentidad(Matriz, fila, colum + 1);
                     }
                 }
-            } else {
+            }else{
                 identidad = matrizIndentidad(Matriz, fila + 1, 0);
             }
         } else {
